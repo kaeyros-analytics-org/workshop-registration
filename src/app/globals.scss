@@ -17,13 +17,13 @@ body {
     margin: 0;
 
 
-    @import url('href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
+    @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
 
     // <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet">
 
     // background-color: aqua;
 
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi';
     
 
     .NavigationBarContainer {
@@ -50,7 +50,7 @@ body {
             // background-color: rgb(91, 160, 160);
             // width: 50%;
             display: grid; 
-            gap: 1rem;
+            // gap: 1rem;
     
             justify-content: center;
             align-items: center;
@@ -61,15 +61,35 @@ body {
                 // font-size: 16px;
                 font-weight: 900;
                 font-size: 2rem;
-                color: aquamarine;
+                color: aquamarine; 
+                color: black;
+            }
+
+            .MainTitleDivMain {
+                justify-self: center;
+                text-align: center;
+                // font-size: 16px;
+                font-weight: 901;
+                font-style: bold;
+                font-size: 1rem;
+                margin-top: 1rem;
             }
 
             .MainTitleDiv {
                 justify-self: center;
                 text-align: center;
                 // font-size: 16px;
-                font-weight: 900;
-                font-size: 2rem;
+                font-weight: 901;
+                font-style: bold;
+                font-size: 1.5rem;
+            }
+            
+            .MainTitleDiv2 {
+                justify-self: center;
+                text-align: center;
+                // font-size: 16px;
+                font-weight: 901;
+                font-size: 1rem;
             }
 
             .DateDiv {
@@ -82,8 +102,8 @@ body {
             .TitleDiv {
                 justify-self: center;
                 text-align: center;
-                font-size: 16px;
-                font-weight: 900;
+                font-size: 1rem;
+                // font-weight: 900;
             }
     
             .sectionContent {
@@ -233,6 +253,7 @@ body {
             .partenersLogo {
                 // justify-content: center;
                 // background-image: url("../../public/bgrd/main_bg2.jpeg");
+                margin-top: 1rem;
 
                 width: 100%;
                 display: grid;
@@ -243,7 +264,15 @@ body {
                 img {
                     justify-self: center;
                     width: 30%;
+                   
+                    @media(max-width: 600px) {
+                        // -webkit-box-shadow: none;
+                        // -moz-box-shadow: none;
+                        // box-shadow: none;
+                        width: 65%;
+                    }
                 }
+
             }
     
             .ButtonDiv {

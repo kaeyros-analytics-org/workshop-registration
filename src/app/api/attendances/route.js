@@ -22,31 +22,37 @@ export const POST = async (request) => {
     const dateNow = new Date();
     console.log("-------------", dateNow, id);
 
-    // const allUserAttendances = await AttendanceClass.getAttendanceByUserID(id);
+    const allUserAttendances = await AttendanceClass.getAttendanceByUserID(id);
 
-    // allUserAttendances.forEach((element) => {
-    //     let month = dateNow.getMonth() + 1; //months from 1-12
-    //     let day = dateNow.getDate();
-    //     let year = dateNow.getFullYear();
-    //     if (dateNow.getDay()) {
-    //     }
-    // });
+    allUserAttendances.forEach((element) => {
+        let month = dateNow.getMonth() + 1; //months from 1-12
+        let day = dateNow.getDate();
+        let year = dateNow.getFullYear();
+        console.log("month-DAY-YEAR", month, day, year);
+        console.log("SSSSS", element);
+        // if (dateNow.getDay()) {
+        // }
+    });
 
-    // console.log("AAAAAAAAAA", allUserAttendances)
+    console.log("AAAAAAAAAA", allUserAttendances)
 
     // 1 - CREATE RESERVATION RECORD IN THE DATABASE
-    const newAttendance = {
-      date: dateNow,
-      time: `${dateNow.getTime()}, ${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
-      user_id: id, 
-      name: name, 
-    };
-    console.log(newAttendance);
-    const attendance = await AttendanceClass.addAttendances(newAttendance);
-    console.log(attendance);
+    // const newAttendance = {
+    //   date: dateNow,
+    //   time: `${dateNow.getTime()}, ${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
+    //   user_id: id, 
+    //   name: name, 
+    // };
+    // console.log(newAttendance);
+    // const attendance = await AttendanceClass.addAttendances(newAttendance);
+    // console.log(attendance);
 
+    // return NextResponse.json(
+    //   { message: "Reservation Created Successfully", attendance },
+    //   { status: 201 }
+    // );
     return NextResponse.json(
-      { message: "Reservation Created Successfully", attendance },
+      { message: "Reservation Created Successfully", attendance: "HELLO" },
       { status: 201 }
     );
   } catch (error) {

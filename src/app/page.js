@@ -11,8 +11,8 @@ export default function Home() {
   const router = useRouter(); 
 
   const [ showSuggestion, setShowSuggestion ] = useState (false);
-    const [showUsers, setShowUsers] = useState(false);
-    const [showResult, setShowResult] = useState([]);
+  const [showUsers, setShowUsers] = useState(false);
+  const [showResult, setShowResult] = useState([]);
 
   const getAllUsers = async () => {
     const res = await fetch(`/api/fill_attendances`, {
@@ -24,22 +24,13 @@ export default function Home() {
     setShowUsers(res);
   };
 
-  console.log(showUsers);
-
   useEffect(() => {
-    // getUserDetails();
     getAllUsers();
   }, []);
 
-  // const showNameSuggestions = () => {
-  //   setShowSuggestion (true)
-  // };
-
   const handleFilterName = (e) => {
-
     let final_value = showUsers.reservationsData;
     let filteredAttendances = final_value?.filter((user, id) => {
-      console.log(user);
       if (e.target.value === "") return showUsers?.reservationsData;
       return (
         user.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
@@ -50,81 +41,65 @@ export default function Home() {
     });
     setShowResult(filteredAttendances);
   };
-  console.log(showResult);
+
+  // console.log(showResult);
   const [ showConfirm, setShowConfirm ] = useState (false)
   const [disableButton, setDisableButton] = useState(false);
 
   const handleShowConfirm = async (id, name) => {
-    // const handleSubmit = async (event) => {
+    try {
 
-    // toast.promise(saveSettings(settings), {
-    //   loading: "Saving...",
-    //   success: <b>Settings saved!</b>,
-    //   error: <b>Could not save.</b>,
-    // });
-      
-      try {
+      const usersData = await fetch("/api/attendances", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id: id,
+          name: name,
+        }),
+      }).then((response) => response.json()).then((data) => {
+          return data;
+        });
 
-        const usersData = await fetch("/api/attendances", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            id: id,
-            name: name,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // window.localStorage.setItem("userToken", data.data.token);
-            // window.localStorage.setItem("email", data.data.email);
-            // window.localStorage.setItem("id", data.data.id);
-            // dispatch({ type: "LOGGED_IN_USER", isLoggedIn: true });
-            return data;
-          });
+      // console.log("EEEEEEEEEE: ", usersData);
 
-        console.log("EEEEEEEEEE: ", usersData);
-
-        if (usersData) {
-          // dispatch({ type: "LOGGED_IN_USER", isLoggedIn: true });
-          // window.localStorage.setItem('userToken', res.data.token)
-          // window.localStorage.setItem('user', res.data.user)
-          toast.success(`Ajout de présence éffectuée avec succes`);
-
-          setShowResult([]);
-          router.refresh();
-          router.push("/amazing_congratulation");
-        } else if (usersData.status === 409) {
-          toast.error(`Votre présence a déja été signalée aujourd'hui. `);
-        } else {
-          throw new Error("Echec Ajout de présence de l'utilisateur. ");
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setDisableButton(false);
+      if (usersData) {
+        toast.success(`Ajout de présence éffectuée avec succes`);
+        setShowResult([]);
+        router.refresh();
+        router.push("/amazing_congratulation");
+      } else if (usersData.status === 409) {
+        toast.error(`Votre présence a déja été signalée aujourd'hui. `);
+      } else {
+        throw new Error("Echec Ajout de présence de l'utilisateur. ");
       }
-    // };
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setDisableButton(false);
+    }
   }
 
   const [ options, setOptions ] = useState({ year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }); 
   return (
     <main className="HommePageContainer">
       <div className="Content">
-        <div className="MainTitleDiv">
-          <h1>DATA DRIVEN SOLUTION</h1>
+        <div className="MainTitleDivMain">
+          <h1>International Workshop</h1>
         </div>
         <div className="MainTitleDiv">
+          <h1>Data Driven Reaserch & Entrepreneurship</h1>
+        </div>
+        <div className="MainTitleDiv2">
           <h1>Day 1</h1>
         </div>
         <div className="DateDiv">
           <h1>{new Date().toLocaleDateString("fr-FR", options)}</h1>
         </div>
         <div className="TitleDiv">
-          <h1>Inscrivez votre Présent en tappant votre nom ci-dessous</h1>
+          <h3>Inscrivez votre Présence en tappant votre nom ci-dessous</h3>
         </div>
-
         <div className="sectionContent">
           <div className="SearchSuggestionsDiv">
             <FontAwesomeIcon icon={faSearch} size="2xl" color="black" />
@@ -139,7 +114,9 @@ export default function Home() {
           </div>
 
           <div className="extraInstruction">
-            <p>Cliquez sur le boutton &quot;Présent&quot; a droite de votre Nom</p>
+            <p>
+              Cliquez sur le boutton &quot;Présent&quot; a droite de votre Nom
+            </p>
           </div>
 
           {showSuggestion ? (
@@ -191,77 +168,7 @@ export default function Home() {
         <div className="partenersLogo">
           <img src="./bgrd/main_bg3.jpeg" />
         </div>
-
-        {/* <div className="ButtonDiv">
-          <button className="Present">Present</button>
-        </div> */}
       </div>
-
-      {/* <div className="sectionContent">
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-        <div className="peopleAttendanceCheck">
-          <div className="genderClass">
-            
-            <p>Mr</p>
-          </div>
-          <div className="PersonsName">Eric Mbala</div>
-          <div className="ButtonDiv">
-            <button className="Present">Present</button>
-          </div>
-        </div>
-      </div> */}
     </main>
   );
 }

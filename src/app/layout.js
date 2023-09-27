@@ -15,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head><link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet" ></link></head>
       <body className={inter.className}>
         {/* <NavigationBar /> */}
         <Toaster position="top-center" toastOptions={{ duration: 10000 }} />

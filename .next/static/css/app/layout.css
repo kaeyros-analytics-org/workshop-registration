@@ -73,8 +73,8 @@
 body {
   padding: 0;
   margin: 0;
-  @import url('href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
-  font-family: "Satoshi", sans-serif;
+  @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
+  font-family: "Satoshi";
 }
 body .NavigationBarContainer {
   background-color: aliceblue;
@@ -94,7 +94,6 @@ body .HommePageContainer {
 body .HommePageContainer .Content {
   padding: 2rem;
   display: grid;
-  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
@@ -104,12 +103,28 @@ body .HommePageContainer .Content .ThankYou {
   font-weight: 900;
   font-size: 2rem;
   color: aquamarine;
+  color: black;
+}
+body .HommePageContainer .Content .MainTitleDivMain {
+  justify-self: center;
+  text-align: center;
+  font-weight: 901;
+  font-style: bold;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 body .HommePageContainer .Content .MainTitleDiv {
   justify-self: center;
   text-align: center;
-  font-weight: 900;
-  font-size: 2rem;
+  font-weight: 901;
+  font-style: bold;
+  font-size: 1.5rem;
+}
+body .HommePageContainer .Content .MainTitleDiv2 {
+  justify-self: center;
+  text-align: center;
+  font-weight: 901;
+  font-size: 1rem;
 }
 body .HommePageContainer .Content .DateDiv {
   justify-self: center;
@@ -120,8 +135,7 @@ body .HommePageContainer .Content .DateDiv {
 body .HommePageContainer .Content .TitleDiv {
   justify-self: center;
   text-align: center;
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 1rem;
 }
 body .HommePageContainer .Content .sectionContent {
   justify-self: center;
@@ -211,6 +225,7 @@ body .HommePageContainer .Content .sectionContent .peopleAttendanceCheck .Button
   padding: 24px 12px;
 }
 body .HommePageContainer .Content .partenersLogo {
+  margin-top: 1rem;
   width: 100%;
   display: grid;
   justify-items: center;
@@ -218,6 +233,11 @@ body .HommePageContainer .Content .partenersLogo {
 body .HommePageContainer .Content .partenersLogo img {
   justify-self: center;
   width: 30%;
+}
+@media (max-width: 600px) {
+  body .HommePageContainer .Content .partenersLogo img {
+    width: 65%;
+  }
 }
 body .HommePageContainer .Content .ButtonDiv {
   display: grid;

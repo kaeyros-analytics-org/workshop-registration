@@ -1,5 +1,7 @@
 {
   "/page": "app/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/fill_attendances/route": "app/api/fill_attendances/route.js"
+  "/amazing_congratulation/page": "app/amazing_congratulation/page.js",
+  "/api/fill_attendances/route": "app/api/fill_attendances/route.js",
+  "/api/attendances/route": "app/api/attendances/route.js"
 }
