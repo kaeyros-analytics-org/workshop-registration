@@ -61,8 +61,6 @@ export default function Home() {
       }).then((response) => response.json()).then((data) => {
           return data;
         });
-
-      // console.log("EEEEEEEEEE: ", usersData);
   
       if (usersData) {
         toast.success(`Ajout de présence éffectuée avec succes`);
