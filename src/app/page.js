@@ -63,7 +63,7 @@ export default function Home() {
         });
 
       // console.log("EEEEEEEEEE: ", usersData);
-
+  
       if (usersData) {
         toast.success(`Ajout de présence éffectuée avec succes`);
         setShowResult([]);
