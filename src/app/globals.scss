@@ -1,0 +1,262 @@
+body {
+
+    // @import '@fontsource/roboto/300.css';
+    // @import '@fontsource/roboto/400.css';
+    // @import '@fontsource/roboto/500.css';
+    // @import '@fontsource/roboto/700.css';
+
+    // @import "./variables.module.scss";
+    // @import "../styles/ReservationStyle.scss";
+    // @import "../styles/CalendarStyles.scss";
+    // @import "../styles/RoomSelectionSteps.scss";
+    // @import "../styles/LoginStyles.scss";
+    // @import "../styles/DashboardContainer.scss";
+    // @import "../styles/ReservationsContainer.scss";
+    // @import "../styles/politique_de_confidentialite.scss";
+    padding: 0;
+    margin: 0;
+
+
+    @import url('href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
+
+    // <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet">
+
+    // background-color: aqua;
+
+    font-family: 'Satoshi', sans-serif;
+    
+
+    .NavigationBarContainer {
+        background-color: aliceblue;
+    }
+
+    .HommePageContainer {
+
+        background-image: url("../../public/bgrd/main_bg.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        background-color: azure;
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+
+        .Content {
+            padding: 2rem;
+
+            // background-color: rgb(91, 160, 160);
+            // width: 50%;
+            display: grid; 
+            gap: 1rem;
+    
+            justify-content: center;
+            align-items: center;
+
+            .ThankYou {
+                justify-self: center;
+                text-align: center;
+                // font-size: 16px;
+                font-weight: 900;
+                font-size: 2rem;
+                color: aquamarine;
+            }
+
+            .MainTitleDiv {
+                justify-self: center;
+                text-align: center;
+                // font-size: 16px;
+                font-weight: 900;
+                font-size: 2rem;
+            }
+
+            .DateDiv {
+                justify-self: center;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 900;
+            }
+    
+            .TitleDiv {
+                justify-self: center;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 900;
+            }
+    
+            .sectionContent {
+                // background-color: cadetblue;
+                justify-self: center;
+                width: 80%;
+    
+                // display: grid; 
+                // justify-content: center;
+                border: 1px solid grey;
+                border-radius: 1rem;
+                // border-bottom-left-radius: 1px solid grey;
+                // border-bottom-left-radius: 1px solid grey;
+                // border-bottom-left-radius: 1px solid grey;
+                // padding: 1rem;
+                gap: 1rem;
+
+                .SearchSuggestionsDiv {
+                    padding: .5rem;
+                    // width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 10fr;
+                    align-items: center;
+                    border-bottom: 1px solid grey; 
+
+                    input {
+                        border: none;
+                        padding: 1rem;
+                        width: 80%; 
+                        background-color: transparent;
+
+                        outline: none;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .extraInstruction {
+                    padding: 0rem 1rem;
+                    
+                }
+
+                .ShowSuggestions {
+                    height: auto;
+                    max-height: 300px;
+                    padding: 1rem;
+                    display: grid;
+                    gap: 1rem;
+                    overflow: scroll;
+                    overflow: scroll;
+                    overflow-y: scroll !important;
+                    overflow-x: hidden;
+                    scrollbar-color: black !important;
+                    scrollbar-color: white !important;
+
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                        height: 10px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: linear-gradient(to bottom right, black 0%, black 100%);
+
+                        border-radius: 5px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: rgb(36, 36, 36);
+                        border: 1px solid rgb(36, 36, 36);
+                    }
+
+                    &::-webkit-scrollbar-button {
+                        background-color: black;
+                        border-radius: 5px;
+                    }
+                    
+
+                    .suggestionItem {
+                        padding: .5rem; 
+                        border-radius: .5rem;
+                        // background-color: aqua;
+                        
+
+                        display: grid;
+                        border: 1px solid grey;
+                        border-radius: 1rem;
+                        align-items: center;
+                        grid-template-columns: repeat(2, 1fr);
+
+                        .left {
+                            justify-self: flex-start;
+                            display: grid;
+                            grid-template-columns: 1fr 3fr;
+                            align-items: center;
+                            gap: 1rem;
+                            // background-color: aliceblue;
+
+                            .suggestionContent {
+
+                            }
+                        }
+
+                        .right {
+                            // background-color: aliceblue;
+                            justify-self: flex-end;
+                            padding: .5rem;
+                        }
+                    }
+                }
+
+                .ShowSuggestionsFooter {
+                    padding: 1rem;
+                    // width: 100%;
+                    border-top: 1px solid grey;
+                }
+
+                // grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+
+                .TheUsers {
+                    padding: 1rem;
+                     width: 10rem;
+                }
+
+                .peopleAttendanceCheck {
+                    border: 1px solid grey; 
+                    padding: 1rem;
+    
+                    .genderClass {
+    
+                    }
+    
+                    .PersonsName {
+    
+                    }
+    
+                    .ButtonDiv {
+    
+                        button {
+                            // padding: 1.5rem;
+                            // padding: 2.4rem 1.2rem;
+                            padding: 24px 12px;
+                            // width: 25;
+                        }
+                    }
+                }
+            }
+
+            .partenersLogo {
+                // justify-content: center;
+                // background-image: url("../../public/bgrd/main_bg2.jpeg");
+
+                width: 100%;
+                display: grid;
+                // justify-content: center;
+                justify-items: center;
+                // background-color: aquamarine;
+
+                img {
+                    justify-self: center;
+                    width: 30%;
+                }
+            }
+    
+            .ButtonDiv {
+                // background-color: aqua; 
+                display: grid;
+                justify-content: center;
+    
+                button {
+                    padding: 1rem 4rem;
+                }
+            }
+        }
+    }
+
+
+}
