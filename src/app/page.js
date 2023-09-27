@@ -164,7 +164,7 @@ export default function Home() {
         </div>
 
         <div className="partenersLogo">
-          <img src="./bgrd/main_bg3.jpeg" />
+          <img src="./bgrd/rename.png" />
         </div>
       </div>
     </main>

@@ -118,7 +118,11 @@ export default function Home() {
     <main className="HommePageContainer">
       <div className="Content">
         <div className="ThankYou">
-          <h1>MERCI POUR VOTRE PARTICIPATION</h1>
+          {/* <h1>MERCI POUR VOTRE PARTICIPATION</h1> */}
+          <h1>Merci Pour Votre Participation</h1>
+        </div>
+        <div className="partenersLogo">
+          <img src="./bgrd/rename.png" />
         </div>
       </div>
     </main>
