@@ -90,7 +90,7 @@ export default function Home() {
           <h1>Data Driven Reaserch & Entrepreneurship</h1>
         </div>
         <div className="MainTitleDiv2">
-          <h1>Day 1</h1>
+          <h1>Day 2</h1>
         </div>
         <div className="DateDiv">
           <h1>{new Date().toLocaleDateString("fr-FR", options)}</h1>

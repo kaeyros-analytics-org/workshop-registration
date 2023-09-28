@@ -1,4 +1,4 @@
-// File: /home/ivans/Documents/attendance/workshop-registration/src/app/api/fill_attendances/route.js
+// File: /home/kaeyrosmboma/Documents/GitHub/workshop-registration/src/app/api/fill_attendances/route.js
 import * as entry from '../../../../../src/app/api/fill_attendances/route.js'
 import type { NextRequest } from 'next/server.js'
 

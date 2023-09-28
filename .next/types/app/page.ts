@@ -1,4 +1,4 @@
-// File: /home/ivans/Documents/attendance/workshop-registration/src/app/page.js
+// File: /home/kaeyrosmboma/Documents/GitHub/workshop-registration/src/app/page.js
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
