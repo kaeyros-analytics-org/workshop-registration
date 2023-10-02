@@ -39,7 +39,7 @@ export const POST = async (request) => {
     // 1 - CREATE ATTENDANCE RECORD IN THE DATABASE
     const newAttendance = {
       date: dateNow,
-      time: `${dateNow.getTime()}, ${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
+      time: `${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
       user_id: id, 
       name: name, 
     };
