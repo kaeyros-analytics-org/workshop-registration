@@ -22,22 +22,22 @@ const AttendanceClass = class {
     });
   }
 
-    static getAttendanceByUserID(user_id) {
-      return new Promise((NextRequest) => {
-        try {
-          console.log("----ID----", user_id);
-          MysqlDbConnectionConfig.query(
-            "SELECT * FROM attendance WHERE user_id = " + user_id,
-            function (err, result, fields) {
-              if (err) throw err;
-              NextRequest(result);
-            }
-          );
-        } catch (error) {
-          throw error;
-        }
-      });
-    }
+  static getAttendanceByUserID(user_id) {
+    return new Promise((NextRequest) => {
+      try {
+        console.log("----ID----", user_id);
+        MysqlDbConnectionConfig.query(
+          "SELECT * FROM attendance WHERE user_id = " + user_id,
+          function (err, result, fields) {
+            if (err) throw err;
+            NextRequest(result);
+          }
+        );
+      } catch (error) {
+        throw error;
+      }
+    });
+  }
 
   //   static getUserByEmail(email) {
   //     return new Promise((NextRequest) => {

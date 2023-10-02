@@ -36,15 +36,15 @@ export const POST = async (request) => {
 
     console.log("AAAAAAAAAA", allUserAttendances)
 
-    // 1 - CREATE RESERVATION RECORD IN THE DATABASE
-    // const newAttendance = {
-    //   date: dateNow,
-    //   time: `${dateNow.getTime()}, ${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
-    //   user_id: id, 
-    //   name: name, 
-    // };
-    // console.log(newAttendance);
-    // const attendance = await AttendanceClass.addAttendances(newAttendance);
+    // 1 - CREATE ATTENDANCE RECORD IN THE DATABASE
+    const newAttendance = {
+      date: dateNow,
+      time: `${dateNow.getTime()}, ${dateNow.getHours()} : ${dateNow.getMinutes()} : ${dateNow.getSeconds()}`,
+      user_id: id, 
+      name: name, 
+    };
+    console.log(newAttendance);
+    const attendance = await AttendanceClass.addAttendances(newAttendance);
     // console.log(attendance);
 
     // return NextResponse.json(
